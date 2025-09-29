@@ -277,3 +277,20 @@
   root.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') next(); });
 })();
 
+// Choose section: make visual "come to life" when visible
+(function () {
+  var section = document.getElementById('choose');
+  if (!section) return;
+  function activate() { section.classList.add('is-live'); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { activate(); io.unobserve(section); }
+      });
+    }, { threshold: 0.25 });
+    io.observe(section);
+  } else {
+    activate();
+  }
+})();
+
