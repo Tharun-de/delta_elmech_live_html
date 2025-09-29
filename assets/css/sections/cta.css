@@ -1,0 +1,44 @@
+/* Call-to-Action section styles */
+.section-cta { display: grid; place-items: center; }
+.section-cta .cta { 
+  width: 100%;
+  max-width: 920px; 
+  margin: 0 auto; 
+  text-align: center; 
+  padding: 24px; 
+  border-radius: 14px; 
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-cta .cta::before { 
+  content: ""; 
+  position: absolute; 
+  inset: -40px -20px;
+  background: radial-gradient(700px 280px at 18% 24%, rgba(139,201,255,0.14), transparent 60%),
+              radial-gradient(700px 280px at 88% 86%, rgba(255,239,64,0.12), transparent 60%);
+  filter: blur(18px);
+  pointer-events: none; 
+}
+
+.section-cta .cta h2 { 
+  margin: 0 0 8px; 
+  font-size: clamp(24px, 4.6vw, 40px); 
+  letter-spacing: 0.2px; 
+}
+
+.section-cta .cta p { 
+  margin: 0 0 16px; 
+  color: var(--muted); 
+}
+
+.section-cta .btn { margin-top: 6px; }
+
+@media (max-width: 640px) {
+  .section-cta .cta { padding: 18px; }
+}
+
+
