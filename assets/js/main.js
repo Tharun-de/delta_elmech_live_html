@@ -247,3 +247,33 @@
   });
 })();
 
+// Choose Delta rotator (auto-rotate with pause offscreen)
+(function () {
+  var root = document.getElementById('choose-rotator');
+  if (!root) return;
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.choose-slide'));
+  if (slides.length <= 1) { slides.forEach(function (s) { s.classList.add('is-active'); }); return; }
+
+  var index = 0; var timer = null; var running = false;
+  function show(i) {
+    slides.forEach(function (s, j) { if (j === i) s.classList.add('is-active'); else s.classList.remove('is-active'); });
+  }
+  function next() { index = (index + 1) % slides.length; show(index); }
+  function start() { if (running) return; running = true; timer = setInterval(next, 3800); }
+  function stop() { running = false; if (timer) { clearInterval(timer); timer = null; } }
+
+  // Start only when visible
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) start(); else stop(); });
+    }, { threshold: 0.2 });
+    io.observe(root);
+  } else {
+    start();
+  }
+
+  // Keyboard accessibility: advance with ArrowRight when focused
+  root.setAttribute('tabindex', '0');
+  root.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') next(); });
+})();
+
