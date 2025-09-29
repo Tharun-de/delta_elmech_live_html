@@ -134,3 +134,36 @@
 @media (min-width: 1100px) { .about-mosaic { grid-template-columns: repeat(3, 420px); gap: 0; justify-content: center; } .about-mosaic .mosaic-feature { min-height: 360px; width: 420px; } }
 
 
+/* Leadership & Team — differentiated section */
+#team { position: relative; background: linear-gradient(180deg, rgba(64,224,208,0.06), rgba(173,216,230,0.05)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+#team::before { content: ""; position: absolute; inset: -60px -40px; background: radial-gradient(680px 260px at 16% 20%, rgba(64,224,208,0.12), transparent 60%), radial-gradient(720px 280px at 86% 80%, rgba(173,216,230,0.12), transparent 60%); filter: blur(18px); pointer-events: none; }
+
+#team .team-cards { gap: 16px; }
+#team .team-cards .card { position: relative; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background:
+  radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,0.04), rgba(255,255,255,0.00)),
+  var(--panel);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
+
+#team .team-cards .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, #51e1a7, #2fd4ff); opacity: 0.9; }
+
+/* Accent colors per card */
+#team .team-cards .card:nth-child(1)::before { background: linear-gradient(180deg, #51e1a7, #2fd4ff); }
+#team .team-cards .card:nth-child(2)::before { background: linear-gradient(180deg, #ffd166, #f77f00); }
+#team .team-cards .card:nth-child(3)::before { background: linear-gradient(180deg, #7b61ff, #22d1ee); }
+#team .team-cards .card:nth-child(4)::before { background: linear-gradient(180deg, #ff6b6b, #ffd166); }
+
+#team .team-cards .card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.22); border-color: rgba(255,255,255,0.16); }
+
+#team .team-cards .card h3 { margin: 0 0 8px; font-weight: 800; letter-spacing: 0.2px; }
+#team .team-cards .card p { margin: 0; color: var(--muted); }
+
+/* Subtle highlight sweep on hover */
+#team .team-cards .card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.06) 42%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 58%, transparent 100%); transform: translateX(-120%); transition: transform 700ms ease; mix-blend-mode: screen; pointer-events: none; }
+#team .team-cards .card:hover::after { transform: translateX(0); }
+
+@media (max-width: 720px) {
+  #team .team-cards { gap: 12px; }
+}
+
+
