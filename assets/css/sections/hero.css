@@ -1,0 +1,23 @@
+.hero { position: relative; min-height: 72vh; display: grid; place-items: center; z-index: 46; }
+.hero-media { position: absolute; inset: 0; background-image: url('../for our works/74cb546e-cb8b-4228-95d2-925791bcd2c2.JPG'); background-size: cover; background-position: center; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 47; will-change: transform, opacity; backface-visibility: hidden; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,15,25,0.3), rgba(11,15,25,0.9)); }
+.hero-content { position: relative; text-align: center; padding: 96px 0; z-index: 48; }
+.hero h1 { font-size: clamp(28px, 6vw, 56px); line-height: 1.1; margin: 0 0 12px; }
+.hero p { color: var(--muted); max-width: 720px; margin: 0 auto; }
+
+.hero-delta h1 { color: var(--accent); text-shadow: 0 0 2px rgba(254,55,46,0.65), 0 0 16px rgba(139,201,255,0.45), 0 0 38px rgba(255,239,64,0.35); }
+.hero-delta p { color: rgba(255,255,255,0.92); text-shadow: 0 1px 8px rgba(0,0,0,0.35); }
+.hero-delta .trust-copy strong { color: #ffffff; text-shadow: 0 0 2px rgba(255,239,64,0.7), 0 0 12px rgba(139,201,255,0.55), 0 0 28px rgba(51,82,172,0.45), 0 0 44px rgba(254,55,46,0.45); animation: trustGlow 6s ease-in-out infinite; }
+.hero-delta .trust-copy span { color: rgba(255,255,255,0.9); }
+.hero-delta .rating-score { color: #ffffff; text-shadow: 0 1px 8px rgba(0,0,0,0.35); }
+.hero-delta .rating-caption { color: rgba(255,255,255,0.9); }
+.hero-cta { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; background: #ecfeff; color: #155e75; border: 1px solid #bae6fd; padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; }
+.badge-red { background: var(--brand-red); border-color: rgba(255,255,255,0.95); }
+.hero-meta { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--muted); text-align: left; }
+.logos { display: inline-flex; gap: 8px; align-items: center; }
+.logo-chip { width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: white; background: linear-gradient(135deg,#06b6d4,#10b981); font-size: 12px; }
+
+
+

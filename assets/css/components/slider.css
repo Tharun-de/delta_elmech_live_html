@@ -1,0 +1,13 @@
+.slider { position: relative; }
+.slides { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; overflow: hidden; scroll-behavior: smooth; }
+.slide { padding: 20px; margin: 0 8px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); }
+.slide p { margin: 0 0 12px; color: var(--text); }
+.slide-meta { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.slide-meta img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); border: 1px solid var(--border); color: var(--text); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; }
+.slider-btn:hover { background: rgba(0,0,0,0.6); }
+.slider-btn.prev { left: -6px; }
+.slider-btn.next { right: -6px; }
+
+
+

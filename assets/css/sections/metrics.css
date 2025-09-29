@@ -1,0 +1,13 @@
+#metrics { position: relative; overflow: hidden; }
+#metrics::before { content: ""; position: absolute; inset: -60px -20px; z-index: 0; background: radial-gradient(900px 380px at 10% 20%, rgba(149,73,218,0.22), transparent 60%), radial-gradient(700px 300px at 90% 80%, rgba(173,97,202,0.18), transparent 58%), radial-gradient(600px 260px at 50% 0%, rgba(146,101,112,0.16), transparent 60%); filter: blur(16px); transform: translate3d(0,0,0); animation: metricsGlow 14s ease-in-out infinite alternate; pointer-events: none; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center; position: relative; z-index: 1; }
+.metric { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+.theme-dark .metric { background: var(--metric-bg); border-color: rgba(255,255,255,0.08); }
+.theme-dark .metric-title { color: #eaf2ff; }
+.theme-dark .metric p { color: rgba(234,242,255,0.82); }
+.metric-num { font-size: 28px; font-weight: 800; color: var(--accent); }
+.metric-title { font-weight: 700; margin-top: 6px; color: var(--text); }
+.metric p { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+
+
+

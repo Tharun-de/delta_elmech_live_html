@@ -1,0 +1,32 @@
+.site-header { position: sticky; top: 0; z-index: 50; background: transparent; backdrop-filter: blur(8px); border-bottom: none; }
+.theme-dark .site-header::after { content: ""; position: fixed; left: 0; right: 0; top: 0; height: 120px; z-index: 40; pointer-events: none; background: linear-gradient(to bottom, rgba(254,55,46,0.15) 0%, rgba(139,201,255,0.15) 25%, rgba(255,239,64,0.12) 60%, rgba(0,0,0,0.00) 85%, rgba(0,0,0,0.00) 100%); }
+.header-light { background: transparent; border-bottom: none; }
+.header-light .nav-menu a { color: #334155; }
+.header-light .nav-menu a:hover { color: #0f172a; }
+.brand-delta { font-weight: 700; font-size: 18px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-weight: 700; letter-spacing: 0.4px; font-size: 20px; }
+.brand-delta { display: inline-flex; align-items: center; gap: 8px; position: relative; z-index: 61; }
+.brand-logo { width: 52px; height: 52px; object-fit: cover; border-radius: 0; margin-right: 0; vertical-align: middle; box-shadow: none; position: relative; z-index: 62; mix-blend-mode: normal; background: transparent; filter: brightness(1.15) saturate(1.1) contrast(1.05); }
+
+.nav-toggle { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.nav-toggle-bar { width: 22px; height: 2px; background: var(--text); display: block; margin: 4px 0; }
+
+.nav-menu { display: flex; gap: 0; align-items: center; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 50px; padding: 6px; border: 1px solid rgba(255, 255, 255, 0.25); list-style: none; margin: 0; padding-left: 6px; padding-right: 6px; }
+.nav-menu li { margin: 0; list-style: none; }
+.nav-menu a { color: #64748b; padding: 8px 16px; border-radius: 50px; transition: all 0.3s ease; font-weight: 500; }
+.nav-menu a:hover { color: #0f172a; background: rgba(255, 255, 255, 0.3); }
+
+/* Dark mode header text colors */
+.theme-dark .brand,
+.theme-dark .brand-delta { color: #a0a0a0; }
+.theme-dark .nav-menu a { color: #a0a0a0; }
+.theme-dark .nav-menu a:hover { color: #ffffff; background: rgba(139,201,255,0.18); }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .nav-menu { position: absolute; top: 64px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 12px; display: none; flex-direction: column; gap: 4px; min-width: 180px; }
+  .nav-menu.is-open { display: flex; }
+}
+
+
