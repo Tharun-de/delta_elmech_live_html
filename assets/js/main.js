@@ -257,6 +257,7 @@
   var index = 0; var timer = null; var running = false;
   function show(i) {
     slides.forEach(function (s, j) { if (j === i) s.classList.add('is-active'); else s.classList.remove('is-active'); });
+    updateDots(); resetProgress();
   }
   function next() { index = (index + 1) % slides.length; show(index); }
   function start() { if (running) return; running = true; timer = setInterval(next, 3800); }
@@ -275,6 +276,33 @@
   // Keyboard accessibility: advance with ArrowRight when focused
   root.setAttribute('tabindex', '0');
   root.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') next(); });
+
+  // Dots + progress
+  var container = root.parentElement;
+  var dotsWrap = container.querySelector('.choose-controls');
+  var dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.querySelectorAll('.dot')) : [];
+  var progress = dotsWrap ? dotsWrap.querySelector('.choose-progress') : null;
+  function updateDots() { dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); d.setAttribute('aria-selected', String(i === index)); }); }
+  function resetProgress() {
+    if (!progress) return;
+    var bar = progress.querySelector('::after'); // cannot select pseudo; fallback by width style on element
+    // Use a CSS custom property to animate width via CSS
+    progress.style.setProperty('--p', '0%');
+    setTimeout(function () { progress.style.setProperty('--p', '100%'); }, 10);
+  }
+  if (progress) {
+    // attach a style rule for ::after width using CSS var
+    try {
+      var sheet = document.styleSheets[0];
+      if (sheet && sheet.insertRule) {
+        sheet.insertRule('.choose-progress::after{width:var(--p,0%)}', sheet.cssRules.length);
+      }
+    } catch (e) {}
+  }
+  if (dots.length) {
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { stop(); index = i; show(index); start(); }); });
+    updateDots(); resetProgress();
+  }
 })();
 
 // Choose section: make visual "come to life" when visible

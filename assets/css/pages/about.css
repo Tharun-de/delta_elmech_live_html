@@ -190,6 +190,26 @@
 #choose:not(.is-live) .choose-title, #choose:not(.is-live) .choose-sub { opacity: 0.75; }
 #choose.is-live .choose-title, #choose.is-live .choose-sub { opacity: 1; }
 
+/* dots + progress */
+.choose-controls { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; position: relative; }
+.dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--border); background: transparent; cursor: pointer; transition: background 220ms ease, transform 220ms ease, border-color 220ms ease; }
+.dot.is-active { background: linear-gradient(135deg, #51e1a7, #2fd4ff); border-color: transparent; transform: scale(1.1); box-shadow: 0 0 0 3px rgba(47, 212, 255, 0.16); }
+.choose-progress { position: absolute; left: 0; bottom: -6px; height: 3px; width: 100%; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+.choose-progress::after { content: ""; display: block; height: 100%; width: 0%; background: linear-gradient(90deg, #51e1a7, #2fd4ff); transition: width 100ms linear; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* gentle float on widgets when live */
+@keyframes widgetFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+#choose.is-live .widget-a { animation: widgetFloat 6s ease-in-out infinite; }
+#choose.is-live .widget-b { animation: widgetFloat 7.5s ease-in-out infinite; }
+#choose.is-live .widget-c { animation: widgetFloat 6.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  #choose.is-live .widget-a,
+  #choose.is-live .widget-b,
+  #choose.is-live .widget-c { animation: none; }
+}
+
 .choose-copy .eyebrow { display: inline-block; color: var(--accent, #2fd4ff); font-weight: 700; letter-spacing: 0.2px; margin-bottom: 6px; }
 .choose-title { margin: 0 0 10px; font-size: clamp(24px, 4.6vw, 40px); }
 .choose-sub { color: var(--muted); margin: 0 0 12px; }
@@ -204,12 +224,5 @@
   .choose-grid { grid-template-columns: 1fr; }
   .choose-visual { min-height: 220px; }
 }
-
-/* continuous ribbon */
-.choose-ribbon { position: relative; border: 1px dashed var(--border); border-radius: 12px; padding: 10px 0; overflow: hidden; margin-top: 14px; background: rgba(255,255,255,0.04); }
-.choose-track { display: inline-flex; gap: 16px; white-space: nowrap; will-change: transform; }
-.chip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 999px; background: var(--panel); border: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
-.chip strong { font-weight: 800; }
-.chip em { font-style: normal; color: var(--muted); }
 
 
