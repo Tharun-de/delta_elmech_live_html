@@ -90,12 +90,13 @@
 }
 
 /* Embedded form styling */
-.form-embed iframe { border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border-1); }
+.form-embed { max-width: 760px; margin: 0 auto; }
+.form-embed iframe { border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border-1); height: 640px; }
 .form-note { margin: 8px 0 0; color: var(--text-subtle); font-size: 14px; }
 .form-note .link { color: var(--accent, #2fd4ff); }
 
 @media (max-width: 720px) {
-  .form-embed iframe { height: 900px; }
+  .form-embed iframe { height: 700px; }
 }
 
 @media (max-width: 900px) {
