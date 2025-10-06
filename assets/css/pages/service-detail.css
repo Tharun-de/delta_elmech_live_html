@@ -123,6 +123,48 @@
   .elec-visual { position: relative; top: 0; height: 260px; margin-top: 10px; }
 }
 
+/* Shared visual box base */
+.visual-box { border-radius: 14px; border: 1px solid var(--border-1); background: var(--surface-2); height: 360px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); position: sticky; top: 80px; overflow: hidden; }
+@media (max-width: 980px) { .visual-box { position: relative; top: 0; height: 260px; margin-top: 10px; } }
+
+/* Mechanical: rotating gears */
+.mech-visual { background: radial-gradient(500px 240px at 30% 20%, rgba(59,130,246,0.12), transparent 60%), radial-gradient(500px 240px at 80% 80%, rgba(16,185,129,0.12), transparent 60%); }
+.gear { position: absolute; border-radius: 50%; border: 6px solid rgba(255,255,255,0.2); box-shadow: 0 0 0 2px rgba(0,0,0,0.1) inset; }
+.gear.g1 { width: 110px; height: 110px; left: 18%; top: 24%; animation: spin 8s linear infinite; }
+.gear.g2 { width: 80px; height: 80px; left: 48%; top: 46%; animation: spin 6s linear infinite reverse; }
+.gear.g3 { width: 60px; height: 60px; left: 70%; top: 26%; animation: spin 5s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Civil: bricks and trowel sweep */
+.civil-visual { background: linear-gradient(180deg, rgba(244,114,182,0.10), rgba(99,102,241,0.10)); position: relative; }
+.brick-row { position: absolute; left: 10%; right: 10%; height: 18px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.20), rgba(255,255,255,0.20) 40px, transparent 40px, transparent 80px); border: 1px solid rgba(255,255,255,0.18); }
+.brick-row.b1 { top: 48%; }
+.brick-row.b2 { top: 60%; }
+.trowel { position: absolute; left: 14%; top: 42%; width: 120px; height: 24px; background: linear-gradient(90deg, #e5e7eb, #cbd5e1); border-radius: 4px; transform: rotate(-8deg); animation: sweep 3s ease-in-out infinite; box-shadow: 0 6px 14px rgba(0,0,0,0.18); }
+@keyframes sweep { 0%,100% { transform: translateX(0) rotate(-8deg); } 50% { transform: translateX(220px) rotate(-4deg); } }
+
+/* Facility: checklist cards with tick */
+.fm-visual { background: linear-gradient(180deg, rgba(34,197,94,0.10), rgba(34,211,238,0.10)); position: relative; }
+.clip { position: absolute; left: 18%; right: 18%; height: 40px; border-radius: 10px; border: 1px solid var(--border-1); background: rgba(255,255,255,0.06); }
+.clip.c1 { top: 36%; }
+.clip.c2 { top: 52%; }
+.tick { position: absolute; right: 24%; top: 44%; width: 26px; height: 26px; border-left: 4px solid #22c55e; border-bottom: 4px solid #22c55e; transform: rotate(-45deg) scale(0.9); animation: tickPulse 2.4s ease-in-out infinite; }
+@keyframes tickPulse { 0%,100% { transform: rotate(-45deg) scale(0.9); } 50% { transform: rotate(-45deg) scale(1.05); } }
+
+/* Architecture: drafting tools */
+.arch-visual { background: linear-gradient(180deg, rgba(234,179,8,0.10), rgba(59,130,246,0.10)); position: relative; }
+.arch-visual .grid { position: absolute; inset: 12% 12% 12% 12%; background: linear-gradient(0deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 24px 24px; border-radius: 8px; }
+.ruler { position: absolute; left: 16%; top: 38%; width: 220px; height: 14px; background: linear-gradient(90deg, #fbbf24, #f59e0b); box-shadow: 0 6px 14px rgba(0,0,0,0.18); transform: rotate(-6deg); }
+.pencil { position: absolute; left: 42%; top: 24%; width: 10px; height: 120px; background: #f97316; border-radius: 4px; box-shadow: 0 6px 14px rgba(0,0,0,0.18); animation: pencilFloat 4s ease-in-out infinite; }
+@keyframes pencilFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Security: camera sweep */
+.sec-visual { background: radial-gradient(500px 240px at 30% 20%, rgba(99,102,241,0.12), transparent 60%), radial-gradient(500px 240px at 80% 80%, rgba(59,130,246,0.12), transparent 60%); position: relative; }
+.cam { position: absolute; left: 22%; top: 28%; width: 120px; height: 60px; background: #0ea5e9; border-radius: 10px; transform-origin: left center; animation: camSweep 4s ease-in-out infinite; box-shadow: 0 8px 18px rgba(14,165,233,0.35); }
+.beam { position: absolute; left: 22%; top: 44%; width: 220px; height: 80px; background: radial-gradient(circle at left, rgba(14,165,233,0.28), rgba(14,165,233,0.02) 70%); transform-origin: left center; animation: camSweep 4s ease-in-out infinite; filter: blur(1px); }
+.blink { position: absolute; left: 24%; top: 32%; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: blink 1.6s ease-in-out infinite; }
+@keyframes camSweep { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+@keyframes blink { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
 @media (max-width: 900px) {
   .service-details { grid-template-columns: 1fr; }
 }
