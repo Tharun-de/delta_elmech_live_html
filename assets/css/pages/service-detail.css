@@ -90,22 +90,23 @@
 }
 
 /* Embedded form styling */
-.form-embed { max-width: 760px; margin: 0 auto; }
-.form-embed iframe { border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border-1); height: 640px; }
+.form-embed { max-width: 720px; margin: 0; }
+.form-embed iframe { border-radius: 10px; background: var(--surface-1); border: 1px solid var(--border-1); height: 560px; }
 .form-note { margin: 8px 0 0; color: var(--text-subtle); font-size: 14px; }
 .form-note .link { color: var(--accent, #2fd4ff); }
 
 @media (max-width: 720px) {
-  .form-embed iframe { height: 700px; }
+  .form-embed iframe { height: 640px; }
 }
 
 /* Enquiry: two-column layout */
 .enquiry-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: start; }
+.enquiry-grid > .section-head { grid-column: 1 / -1; }
 .enquiry-left { display: block; }
 .enquiry-right { position: relative; }
 
 /* Electrical animated visual */
-.elec-visual { position: sticky; top: 80px; border-radius: 14px; border: 1px solid var(--border-1); background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(16,185,129,0.10)); height: 520px; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+.elec-visual { position: sticky; top: 80px; border-radius: 14px; border: 1px solid var(--border-1); background: linear-gradient(135deg, rgba(59,130,246,0.10), rgba(16,185,129,0.10)); height: 360px; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
 .elec-visual .bolt { position: absolute; left: 50%; top: 22%; width: 80px; height: 120px; transform: translateX(-50%) rotate(-8deg); background: linear-gradient(180deg, #facc15, #f59e0b); clip-path: polygon(40% 0, 60% 0, 50% 36%, 66% 36%, 32% 100%, 42% 64%, 30% 64%); filter: drop-shadow(0 8px 20px rgba(250,204,21,0.35)); animation: boltPulse 2.8s ease-in-out infinite; }
 .elec-visual .wire { position: absolute; left: 16px; right: 16px; top: 58%; height: 4px; background: linear-gradient(90deg, #22d3ee, #0ea5e9, #22c55e); border-radius: 4px; box-shadow: 0 0 16px rgba(34,211,238,0.4); animation: wireGlow 4.2s ease-in-out infinite; }
 .elec-visual .spark { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #22d3ee; box-shadow: 0 0 10px #22d3ee, 0 0 24px rgba(34,211,238,0.6); opacity: 0; }
