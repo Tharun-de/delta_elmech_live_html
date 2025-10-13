@@ -3,48 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Security Services — Delta Elmech Systems</title>
-    <meta name="description" content="Security services: access control, CCTV, and on-site personnel for safe operations." />
+    <title>Projects — Delta Elmech Systems</title>
+    <meta name="description" content="Selected projects across electrical, mechanical, civil and facility management." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/utilities.css" />
     <link rel="stylesheet" href="../assets/css/animations.css" />
     <link rel="stylesheet" href="../assets/css/layout/header.css" />
     <link rel="stylesheet" href="../assets/css/components/buttons.css" />
     <link rel="stylesheet" href="../assets/css/components/cards.css" />
-    <link rel="stylesheet" href="../assets/css/components/slider.css" />
-    <link rel="stylesheet" href="../assets/css/components/stats.css" />
-    <link rel="stylesheet" href="../assets/css/sections/hero.css" />
-    <link rel="stylesheet" href="../assets/css/sections/cta.css" />
     <link rel="stylesheet" href="../assets/css/layout/footer.css" />
-    <link rel="stylesheet" href="../assets/css/pages/service-detail.css" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltaelmech.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://deltaelmech.com/services/" },
-        { "@type": "ListItem", "position": 3, "name": "Security", "item": "https://deltaelmech.com/services/security-services.html" }
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://deltaelmech.com/services/security-services.html#service",
-      "name": "Security Services",
-      "serviceType": "Access control, CCTV and guarding",
-      "description": "Access control, CCTV, and trained on‑site personnel for secure, compliant operations.",
-      "url": "https://deltaelmech.com/services/security-services.html",
-      "areaServed": ["Hyderabad", "Telangana", "India"],
-      "provider": { "@id": "https://deltaelmech.com/#org" },
-      "offers": { "@type": "Offer", "priceCurrency": "INR", "url": "https://deltaelmech.com/contact.html" }
-    }
-    </script>
+
+    <link rel="stylesheet" href="../assets/css/pages/projects.css" />
   </head>
   <body class="theme-dark">
     <header class="site-header header-light">
@@ -62,8 +35,8 @@
           <ul id="nav-menu" class="nav-menu">
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../about.html">About</a></li>
-            <li><a href="./index.html">Services</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../services/index.html">Services</a></li>
+            <li><a aria-current="page" href="./index.html">Projects</a></li>
             <li><a class="btn btn-ghost btn-sm" href="../contact.html">Contact</a></li>
             <li><a class="btn btn-primary btn-sm" href="../contact.html">Get Quote</a></li>
             <li>
@@ -77,91 +50,65 @@
     </header>
 
     <main>
-      <section class="hero-service-detail">
+      <section class="hero-projects">
         <div class="container">
-          <h1>Security Services</h1>
-          <p class="hero-sub">Access control, CCTV, and trained on‑site personnel for secure, compliant operations.</p>
-        </div>
-      </section>
-
-      <section class="section section-tight" id="details">
-        <div class="container service-details">
-          <div>
-            <div class="section-head" style="text-align:left">
-              <h2>What we deliver</h2>
-            </div>
-            <p>We deploy end‑to‑end physical security: gate automation, access control, CCTV, intrusion detection and trained guards, with SOPs tailored to your site risk profile.</p>
-            <ul class="checks">
-              <li>Electronic access control and visitor management</li>
-              <li>CCTV design, install and monitoring</li>
-              <li>Perimeter security and incident response</li>
-              <li>24x7 manned guarding and patrols</li>
-            </ul>
-            <div class="section-head" style="text-align:left;margin-top:16px">
-              <h3>Unique techniques</h3>
-            </div>
-            <ul class="checks">
-              <li>Risk mapping and SOP development</li>
-              <li>Video analytics and access logs review</li>
-              <li>Emergency drills and escalation matrix</li>
-              <li>Audit checklists with monthly scorecards</li>
-            </ul>
+          <h1>Selected Projects</h1>
+          <p>Real installations delivered with safety, clarity and speed across sectors.</p>
+          <div class="filters" role="tablist" aria-label="Filter projects">
+            <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-btn" data-filter="electrical" role="tab" aria-selected="false">Electrical</button>
+            <button class="filter-btn" data-filter="mechanical" role="tab" aria-selected="false">Mechanical</button>
+            <button class="filter-btn" data-filter="civil" role="tab" aria-selected="false">Civil</button>
+            <button class="filter-btn" data-filter="facility" role="tab" aria-selected="false">Facility</button>
           </div>
-          <aside class="service-aside">
-            <div class="aside-title">Typical timelines</div>
-            <p>Deploy base system in 1‑2 weeks; scale as per site size.</p>
-            <div class="aside-title">Safety & QA</div>
-            <p>Guard training, device health checks, and incident documentation.</p>
-          </aside>
         </div>
       </section>
 
-      <section class="section section-tight section-alt" id="gallery">
+      <section class="section section-tight">
         <div class="container">
-          <div class="section-head" style="text-align:left">
-            <h2>Photo Gallery</h2>
-          </div>
-          <div class="gallery-grid">
-            <img src="../assets/for our services/security.JPG" alt="Security services" />
-            <img src="../assets/for our works/74cb546e-cb8b-4228-95d2-925791bcd2c2.JPG" alt="CCTV install" />
-            <img src="../assets/for our works/2bd0a978-fd53-427b-8c6b-a49f2b4e8429.JPG" alt="Access control" />
-            <img src="../assets/for our works/IMG_9133.JPG" alt="Security operations" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-tight" id="enquiry">
-        <div class="container enquiry-grid">
-          <div class="section-head" style="text-align:left">
-            <h2>Enquire about Security Services</h2>
-            <p>We’ll assess risks and propose a layered security plan.</p>
-          </div>
-          <div class="enquiry-left">
-            <div class="form-card form-embed">
-              <iframe title="Service Enquiry Form" src="https://docs.google.com/forms/d/e/1FAIpQLScX2KYK398pOeMpEerqkaSoio0PhAtWdsV0ufNvG4NCO1ehCA/viewform?usp=header" width="100%" height="820" frameborder="0" marginheight="0" marginwidth="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Loading…</iframe>
-              <p class="form-note">Having trouble with the embedded form? <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLScX2KYK398pOeMpEerqkaSoio0PhAtWdsV0ufNvG4NCO1ehCA/viewform?usp=header" target="_blank" rel="noopener">Open the form in a new tab</a>.</p>
-            </div>
-          </div>
-          <aside class="enquiry-right" aria-hidden="true">
-            <div class="sec-visual visual-box">
-              <div class="cam"></div>
-              <div class="beam"></div>
-              <div class="blink"></div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section section-tight section-alt" id="apply">
-        <div class="container">
-          <div class="section-head" style="text-align:left">
-            <h2>Apply for Security Roles</h2>
-            <p>Join our trained security personnel team.</p>
-          </div>
-          <p class="form-note">Prefer Google Form? <a class="link" href="https://docs.google.com/forms/d/1kheWx4cAVlCPMN4-sxUINx92Vu9Vzbve9JOENwYCI_4/edit" target="_blank" rel="noopener">Apply here</a>.</p>
-          <div class="form-card form-embed">
-            <iframe title="Jobs Application Form" src="https://docs.google.com/forms/d/1kheWx4cAVlCPMN4-sxUINx92Vu9Vzbve9JOENwYCI_4/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Loading…</iframe>
-            <p class="form-note">Open in a new tab: <a class="link" href="https://docs.google.com/forms/d/1kheWx4cAVlCPMN4-sxUINx92Vu9Vzbve9JOENwYCI_4/viewform" target="_blank" rel="noopener">Jobs Google Form</a>.</p>
+          <div id="projects-grid" class="projects-grid">
+            <figure class="project-card" data-tags="electrical">
+              <img src="../assets/for our works/74cb546e-cb8b-4228-95d2-925791bcd2c2.JPG" alt="Electrical panel assembly" />
+              <figcaption class="project-meta">
+                <h3>Panel Assembly & Commissioning</h3>
+                <p>ABB | Hyderabad | 2024</p>
+              </figcaption>
+            </figure>
+            <figure class="project-card" data-tags="mechanical">
+              <img src="../assets/for our works/aaf614e7-9881-468a-9b42-cc938877a9d8.JPG" alt="Mechanical piping" />
+              <figcaption class="project-meta">
+                <h3>Process Piping Retrofit</h3>
+                <p>Manufacturing Plant | 2023</p>
+              </figcaption>
+            </figure>
+            <figure class="project-card" data-tags="civil">
+              <img src="../assets/for our works/b2813e12-c237-4f0b-b791-0d5f0aa281d3.JPG" alt="Civil structure" />
+              <figcaption class="project-meta">
+                <h3>Structural Floor & Partitions</h3>
+                <p>Commercial Space | 2023</p>
+              </figcaption>
+            </figure>
+            <figure class="project-card" data-tags="facility">
+              <img src="../assets/for our works/IMG_9133.JPG" alt="Facility operations" />
+              <figcaption class="project-meta">
+                <h3>Facility Operations & AMC</h3>
+                <p>Multi‑site | 2022–ongoing</p>
+              </figcaption>
+            </figure>
+            <figure class="project-card" data-tags="electrical">
+              <img src="../assets/for our works/2bd0a978-fd53-427b-8c6b-a49f2b4e8429.JPG" alt="Electrical install" />
+              <figcaption class="project-meta">
+                <h3>LT Distribution & Cabling</h3>
+                <p>Industrial | 2024</p>
+              </figcaption>
+            </figure>
+            <figure class="project-card" data-tags="mechanical">
+              <img src="../assets/for our works/ae27b8c2-ac52-474f-9a5c-92143c9e30ba.JPG" alt="Equipment install" />
+              <figcaption class="project-meta">
+                <h3>Equipment Install & Alignment</h3>
+                <p>Plant | 2024</p>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -188,8 +135,8 @@
             <ul class="footer-list">
               <li><a href="../index.html#home">Home</a></li>
               <li><a href="../about.html">About Us</a></li>
-              <li><a href="./index.html">Services</a></li>
-              <li><a href="../projects/index.html">Projects</a></li>
+              <li><a href="../services/index.html">Services</a></li>
+              <li><a aria-current="page" href="./index.html">Projects</a></li>
               <li><a href="../contact.html">Contact</a></li>
             </ul>
           </div>
@@ -223,6 +170,25 @@
 
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
     <script src="../assets/js/main.js"></script>
+    <script>
+      (function(){
+        var buttons = [].slice.call(document.querySelectorAll('.filter-btn'));
+        var grid = document.getElementById('projects-grid');
+        if (!buttons.length || !grid) return;
+        buttons.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            buttons.forEach(function(b){ b.classList.remove('is-active'); b.setAttribute('aria-selected','false'); });
+            btn.classList.add('is-active'); btn.setAttribute('aria-selected','true');
+            var f = btn.getAttribute('data-filter');
+            [].slice.call(grid.children).forEach(function(card){
+              var tags = (card.getAttribute('data-tags')||'').split(/\s+/);
+              var show = (f==='all') || tags.indexOf(f) !== -1;
+              card.style.display = show ? '' : 'none';
+            });
+          });
+        });
+      })();
+    </script>
   </body>
   </html>
 

@@ -9,6 +9,19 @@
   });
 })();
 
+// Footer year without inline script
+(function(){
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setYear);
+  } else {
+    setYear();
+  }
+  function setYear(){
+    var y = document.getElementById('y');
+    if (y) { y.textContent = new Date().getFullYear(); }
+  }
+})();
+
 // Theme toggle (dark/light with persistence)
 (function () {
   var THEME_KEY = 'site-theme';

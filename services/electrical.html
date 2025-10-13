@@ -20,6 +20,31 @@
     <link rel="stylesheet" href="../assets/css/sections/cta.css" />
     <link rel="stylesheet" href="../assets/css/layout/footer.css" />
     <link rel="stylesheet" href="../assets/css/pages/service-detail.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltaelmech.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://deltaelmech.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Electrical", "item": "https://deltaelmech.com/services/electrical.html" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://deltaelmech.com/services/electrical.html#service",
+      "name": "Electrical Contracting",
+      "serviceType": "Electrical installation, panels, testing & commissioning",
+      "description": "Power distribution, cabling, panel boards, testing & commissioning for industrial and commercial projects.",
+      "url": "https://deltaelmech.com/services/electrical.html",
+      "areaServed": ["Hyderabad", "Telangana", "India"],
+      "provider": { "@id": "https://deltaelmech.com/#org" },
+      "offers": { "@type": "Offer", "priceCurrency": "INR", "url": "https://deltaelmech.com/contact.html" }
+    }
+    </script>
   </head>
   <body class="theme-dark">
     <header class="site-header header-light">
@@ -38,9 +63,9 @@
             <li><a href="../index.html#home">Home</a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="./index.html">Services</a></li>
-            <li><a href="../index.html#projects">Projects</a></li>
-            <li><a class="btn btn-ghost btn-sm" href="../index.html#contact">Contact</a></li>
-            <li><a class="btn btn-primary btn-sm" href="../index.html#quote">Get Quote</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a class="btn btn-ghost btn-sm" href="../contact.html">Contact</a></li>
+            <li><a class="btn btn-primary btn-sm" href="../contact.html">Get Quote</a></li>
             <li>
               <button id="theme-toggle" class="btn btn-sm" aria-label="Toggle theme" title="Toggle theme">
                 <span aria-hidden="true">🌙</span>
@@ -166,8 +191,8 @@
               <li><a href="../index.html#home">Home</a></li>
               <li><a href="../about.html">About Us</a></li>
               <li><a href="./index.html">Services</a></li>
-              <li><a href="../index.html#projects">Projects</a></li>
-              <li><a href="../index.html#contact">Contact</a></li>
+              <li><a href="../projects/index.html">Projects</a></li>
+              <li><a href="../contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">

@@ -3,12 +3,63 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://docs.google.com; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#0b0f19" />
     <title>Delta Elmech Systems — Powering Industries, Managing Facilities, Building the Future</title>
     <meta name="description" content="Leading contracting and facility management services. Powering industries with reliable infrastructure solutions and comprehensive facility management." />
+    <link rel="canonical" href="https://deltaelmech.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Delta Elmech Systems — Powering Industries, Managing Facilities, Building the Future" />
+    <meta property="og:description" content="Leading contracting and facility management services. Powering industries with reliable infrastructure solutions and comprehensive facility management." />
+    <meta property="og:url" content="https://deltaelmech.com/" />
+    <meta property="og:image" content="https://deltaelmech.com/assets/vid/IMG_7263%20(1).png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/vid/IMG_7263 (1).png" type="image/png" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://deltaelmech.com/#org",
+      "name": "Delta Elmech Systems",
+      "url": "https://deltaelmech.com/",
+      "logo": "https://deltaelmech.com/assets/vid/IMG_7263%20(1).png",
+      "sameAs": [
+        "https://www.instagram.com/delta_elmech/",
+        "https://www.linkedin.com/company/106796806/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91 9346397285",
+        "contactType": "customer service",
+        "areaServed": "IN"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Delta Elmech Systems",
+      "image": "https://deltaelmech.com/assets/vid/IMG_7263%20(1).png",
+      "url": "https://deltaelmech.com/",
+      "telephone": "+919346397285",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "PLOT-921, Flat 101, DK Towers, Ayyappa Society, Madhapur",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500081",
+        "addressCountry": "IN"
+      },
+      "areaServed": "IN",
+      "hasMap": "https://www.google.com/maps?q=PLOT+NO+921+FLAT+NO+101,+DK+TOWERS+AYYAPPA+SOCIETY+MADHAPUR+Rangareddy,+Telangana,+500081+India"
+    }
+    </script>
   </head>
   <body class="theme-dark">
     <header class="site-header header-light">
@@ -27,8 +78,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services/index.html">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a class="btn btn-ghost btn-sm" href="#contact">Contact</a></li>
+            <li><a href="projects/index.html">Projects</a></li>
+            <li><a class="btn btn-ghost btn-sm" href="contact.html">Contact</a></li>
             <li><a class="btn btn-primary btn-sm" href="#quote">Get Quote</a></li>
             <li>
               <button id="theme-toggle" class="btn btn-sm" aria-label="Toggle theme" title="Toggle theme">
@@ -41,28 +92,28 @@
     </header>
 
     <main>
-      <section class="hero hero-delta">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <section id="home" class="hero hero-delta">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="assets/vid/IMG_7263 (1).png">
           <source src="assets/vid/Realistic_Cars_and_City_Life.mp4" type="video/mp4" />
         </video>
         <div class="container hero-content">
           <h1 class="reveal glow-text electric" data-text="Powering Industries, Managing Facilities, Building the Future">Powering Industries, Managing Facilities, Building the Future</h1>
           <p class="reveal delay-1 glow-text glow-sub electric-soft" data-text="Leading contracting and facility management services. Expert infrastructure solutions, reliable operations, and innovative project delivery across industries.">Leading contracting and facility management services. Expert infrastructure solutions, reliable operations, and innovative project delivery across industries.</p>
           <div class="hero-cta reveal delay-2">
-            <a href="#quote" class="btn btn-primary">Get Quote</a>
+            <a href="contact.html" class="btn btn-primary">Get Quote</a>
           </div>
 
           <div class="hero-meta reveal delay-2">
             <div class="trust-left">
               <div class="logo-badges" aria-hidden="true">
                 <span class="badge" title="ABB">
-                  <img class="badge-img" src="assets/our partner/ABB_logo.svg" alt="ABB logo" />
+                  <img class="badge-img" src="assets/our partner/ABB_logo.svg" alt="ABB logo" loading="lazy" decoding="async" />
                 </span>
                 <span class="badge" title="State Bank of India">
-                  <img class="badge-img" src="assets/our partner/SBI-logo.svg" alt="SBI logo" />
+                  <img class="badge-img" src="assets/our partner/SBI-logo.svg" alt="SBI logo" loading="lazy" decoding="async" />
                 </span>
                 <span class="badge" title="Larsen & Toubro">
-                  <img class="badge-img" src="assets/our partner/L&T.png" alt="Larsen & Toubro logo" />
+                  <img class="badge-img" src="assets/our partner/L&T.png" alt="Larsen & Toubro logo" loading="lazy" decoding="async" />
                 </span>
               </div>
               <div class="trust-copy"><strong>Trusted by 3K+ companies</strong><span> around the world</span></div>
@@ -139,37 +190,37 @@
             <p>End-to-end contracting and facility management tailored to your operations.</p>
           </div>
           <div class="cards">
-            <a class="card card-cover reveal" href="services/electrical.html" style="background-image:url('assets/for our services/electrical.jpg');">
+            <a class="card card-cover reveal svc-electrical" href="services/electrical.html">
               <div class="card-content">
                 <h3>Electrical</h3>
                 <p>Power distribution, cabling, panels, testing and commissioning.</p>
               </div>
             </a>
-            <a class="card card-cover reveal" href="services/mechanical.html" style="background-image:url('assets/for our services/mechinacal.jpg');">
+            <a class="card card-cover reveal svc-mechanical" href="services/mechanical.html">
               <div class="card-content">
                 <h3>Mechanical</h3>
                 <p>HVAC, piping and equipment installs for reliable performance.</p>
               </div>
             </a>
-            <a class="card card-cover reveal" href="services/facility-management.html" style="background-image:url('assets/for our services/facility.jpg');">
+            <a class="card card-cover reveal svc-facility" href="services/facility-management.html">
               <div class="card-content">
                 <h3>Facility Management</h3>
                 <p>End-to-end operations, asset care and on-call support.</p>
               </div>
             </a>
-            <a class="card card-cover reveal" href="services/civil-works.html" style="background-image:url('assets/for our services/civil.jpg');">
+            <a class="card card-cover reveal svc-civil" href="services/civil-works.html">
               <div class="card-content">
                 <h3>Civil Works</h3>
                 <p>Foundations, finishes and structural execution at quality.</p>
               </div>
             </a>
-            <a class="card card-cover reveal" href="services/architecture-design.html" style="background-image:url('assets/for our services/Architecture.jpg');">
+            <a class="card card-cover reveal svc-architecture" href="services/architecture-design.html">
               <div class="card-content">
                 <h3>Architecture & Designing</h3>
                 <p>Concept to detail: plans, interiors and coordination.</p>
               </div>
             </a>
-            <a class="card card-cover reveal" href="services/security-services.html" style="background-image:url('assets/for our services/security.JPG');">
+            <a class="card card-cover reveal svc-security" href="services/security-services.html">
               <div class="card-content">
                 <h3>Security Services</h3>
                 <p>Access control, CCTV and on-site security personnel.</p>
@@ -189,35 +240,35 @@
           <button class="work-arrow prev" aria-label="Previous">‹</button>
           <div class="work-track" id="work-track">
             <figure class="work-slide">
-              <img src="assets/for our works/74cb546e-cb8b-4228-95d2-925791bcd2c2.JPG" alt="Project photo 1" />
+              <img src="assets/for our works/74cb546e-cb8b-4228-95d2-925791bcd2c2.JPG" alt="Project photo 1" loading="lazy" decoding="async" />
               <figcaption>Recent project — on-site installation</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/bbf64aa7-88e6-4851-b4a3-ebc818d85336.JPG" alt="Project photo 2" />
+              <img src="assets/for our works/bbf64aa7-88e6-4851-b4a3-ebc818d85336.JPG" alt="Project photo 2" loading="lazy" decoding="async" />
               <figcaption>Recent project — electrical assembly</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/2bd0a978-fd53-427b-8c6b-a49f2b4e8429.JPG" alt="Project photo 3" />
+              <img src="assets/for our works/2bd0a978-fd53-427b-8c6b-a49f2b4e8429.JPG" alt="Project photo 3" loading="lazy" decoding="async" />
               <figcaption>Recent project — infrastructure works</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/b2813e12-c237-4f0b-b791-0d5f0aa281d3.JPG" alt="Project photo 4" />
+              <img src="assets/for our works/b2813e12-c237-4f0b-b791-0d5f0aa281d3.JPG" alt="Project photo 4" loading="lazy" decoding="async" />
               <figcaption>Recent project — commissioning</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/e5aa3e51-4c7c-4ac5-ba73-1995f7d8f2b4.JPG" alt="Project photo 5" />
+              <img src="assets/for our works/e5aa3e51-4c7c-4ac5-ba73-1995f7d8f2b4.JPG" alt="Project photo 5" loading="lazy" decoding="async" />
               <figcaption>Recent project — site execution</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/aaf614e7-9881-468a-9b42-cc938877a9d8.JPG" alt="Project photo 6" />
+              <img src="assets/for our works/aaf614e7-9881-468a-9b42-cc938877a9d8.JPG" alt="Project photo 6" loading="lazy" decoding="async" />
               <figcaption>Recent project — civil & finishes</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/ae27b8c2-ac52-474f-9a5c-92143c9e30ba.JPG" alt="Project photo 7" />
+              <img src="assets/for our works/ae27b8c2-ac52-474f-9a5c-92143c9e30ba.JPG" alt="Project photo 7" loading="lazy" decoding="async" />
               <figcaption>Recent project — mechanical systems</figcaption>
             </figure>
             <figure class="work-slide">
-              <img src="assets/for our works/IMG_9133.JPG" alt="Project photo 8" />
+              <img src="assets/for our works/IMG_9133.JPG" alt="Project photo 8" loading="lazy" decoding="async" />
               <figcaption>Recent project — facility services</figcaption>
             </figure>
           </div>
@@ -266,16 +317,16 @@
           <div class="partners-scroll" aria-label="Partner logos">
             <div class="partners-track">
               <div class="partners-row">
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/TATA_Consultancy_Services_Logo_blue.svg" alt="Tata Consultancy Services" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/SBI-logo.svg" alt="SBI" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Accenture.svg" alt="Accenture" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/ABB_logo.svg" alt="ABB" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Qualcomm-Logo.svg" alt="Qualcomm" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Oracle_logo.svg" alt="Oracle" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Wipro_Primary Logo_Color_RGB.png" alt="Wipro" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/L&T.png" alt="Larsen & Toubro" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/My_Home_Group.png" alt="My Home Group" /></span>
-                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/3d22e967bb1bb7d8e2b0dd68c743ffa6.png" alt="Partner" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/TATA_Consultancy_Services_Logo_blue.svg" alt="Tata Consultancy Services" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/SBI-logo.svg" alt="SBI" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Accenture.svg" alt="Accenture" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/ABB_logo.svg" alt="ABB" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Qualcomm-Logo.svg" alt="Qualcomm" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Oracle_logo.svg" alt="Oracle" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/Wipro_Primary Logo_Color_RGB.png" alt="Wipro" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/L&T.png" alt="Larsen & Toubro" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/My_Home_Group.png" alt="My Home Group" loading="lazy" decoding="async" /></span>
+                <span class="partner-chip"><img class="partner-logo" src="assets/our partner/3d22e967bb1bb7d8e2b0dd68c743ffa6.png" alt="Partner" loading="lazy" decoding="async" /></span>
               </div>
               <div class="partners-row" aria-hidden="true">
                 <span class="partner-chip"><img class="partner-logo" src="assets/our partner/TATA_Consultancy_Services_Logo_blue.svg" alt="" /></span>
@@ -297,11 +348,11 @@
 
       <section id="cta" class="section section-alt">
         <div class="container section-cta">
-          <div class="cta">
+            <div id="quote" class="cta">
             <h2>Ready to Transform Your Engineering Operations?</h2>
             <p>Let's discuss how our engineering solutions can optimize your processes and drive innovation.</p>
             <div>
-              <a href="#contact" class="btn btn-primary">Schedule a Consultation →</a>
+              <a href="contact.html" class="btn btn-primary">Schedule a Consultation →</a>
             </div>
           </div>
         </div>
@@ -314,15 +365,15 @@
         <div class="footer-grid">
           <div class="footer-col">
             <div class="footer-brand-row">
-              <img class="footer-logo-img" src="assets/vid/IMG_7263 (1).png" alt="Delta Elmech Systems logo" />
+              <img class="footer-logo-img" src="assets/vid/IMG_7263 (1).png" alt="Delta Elmech Systems logo" loading="lazy" decoding="async" />
               <span class="footer-brand-name">Delta Elmech</span>
             </div>
             <p class="footer-desc">Providing innovative engineering solutions for industrial automation, electrical systems, and mechanical applications since 2014.</p>
             <div class="footer-social">
-              <a class="social-btn" href="https://www.instagram.com/delta_elmech/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/insta,linkdln/icons8-instagram-32.png" alt="Instagram" /></a>
+              <a class="social-btn" href="https://www.instagram.com/delta_elmech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/insta,linkdln/icons8-instagram-32.png" alt="Instagram" /></a>
               <a class="social-btn" href="#" aria-label="X"><img src="assets/insta,linkdln/icons8-x-50.png" alt="X" /></a>
-              <a class="social-btn" href="https://www.linkedin.com/company/106796806/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BQK2T%2BlWKQU6C6ejktEYfOw%3D%3D" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/insta,linkdln/icons8-linkedin-50.png" alt="LinkedIn" /></a>
-              <a class="social-btn" href="#" aria-label="WhatsApp"><img src="assets/insta,linkdln/icons8-whatsapp-50.png" alt="WhatsApp" /></a>
+              <a class="social-btn" href="https://www.linkedin.com/company/106796806/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BQK2T%2BlWKQU6C6ejktEYfOw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/insta,linkdln/icons8-linkedin-50.png" alt="LinkedIn" /></a>
+              <a class="social-btn" href="https://wa.me/919346397285" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/insta,linkdln/icons8-whatsapp-50.png" alt="WhatsApp" /></a>
             </div>
           </div>
           <div class="footer-col">
@@ -331,8 +382,8 @@
               <li><a href="#home">Home</a></li>
               <li><a href="about.html">About Us</a></li>
               <li><a href="services/index.html">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="projects/index.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -348,8 +399,8 @@
             <h4 class="footer-title">Find Us</h4>
             <p class="footer-desc">PLOT-921, Flat 101, DK Towers, Ayyappa Society, Madhapur.</p>
             <div class="footer-map-wrap">
-              <iframe class="footer-map" src="https://www.google.com/maps?q=PLOT+NO+921+FLAT+NO+101,+DK+TOWERS+AYYAPPA+SOCIETY+MADHAPUR+Rangareddy,+Telangana,+500081+India&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Google map location"></iframe>
-              <a class="map-link" href="https://google.com/maps?q=PLOT+NO+921+FLAT+NO+101,+DK+TOWERS+AYYAPPA+SOCIETY+MADHAPUR+Rangareddy,+Telangana,+500081+India" target="_blank" rel="noopener">Open in Google Maps</a>
+              <iframe class="footer-map" src="https://www.google.com/maps?q=PLOT+NO+921+FLAT+NO+101,+DK+TOWERS+AYYAPPA+SOCIETY+MADHAPUR+Rangareddy,+Telangana,+500081+India&output=embed" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups" referrerpolicy="no-referrer-when-downgrade" aria-label="Google map location"></iframe>
+              <a class="map-link" href="https://google.com/maps?q=PLOT+NO+921+FLAT+NO+101,+DK+TOWERS+AYYAPPA+SOCIETY+MADHAPUR+Rangareddy,+Telangana,+500081+India" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
             </div>
           </div>
         </div>
@@ -364,8 +415,7 @@
       </div>
     </footer>
 
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
   </html>
 

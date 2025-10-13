@@ -74,6 +74,12 @@ After a minute, your site should be available at:
 
 `https://tharun-de.github.io/delta_elmech_live_html/`
 
+## SEO & Domain
+
+Canonical and OG/Twitter meta tags are configured for `https://deltaelmech.com`. Update if the domain changes.
+
+Place `robots.txt` and `sitemap.xml` at the site root when deploying to a custom domain.
+
 ## Contributing / Workflow
 
 1. Create a new branch for changes:
