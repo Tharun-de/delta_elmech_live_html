@@ -76,7 +76,7 @@ After a minute, your site should be available at:
 
 ## SEO & Domain
 
-Canonical and OG/Twitter meta tags are configured for `https://deltaelmech.com`. Update if the domain changes.
+Canonical and OG/Twitter meta tags are configured for `https://deltaelmechsystems.com`. Update if the domain changes.
 
 Place `robots.txt` and `sitemap.xml` at the site root when deploying to a custom domain.
 
