@@ -12,20 +12,24 @@
 .nav-toggle { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
 .nav-toggle-bar { width: 22px; height: 2px; background: var(--text); display: block; margin: 4px 0; }
 
-.nav-menu { display: flex; gap: 0; align-items: center; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 50px; padding: 6px; border: 1px solid rgba(255, 255, 255, 0.25); list-style: none; margin: 0; padding-left: 6px; padding-right: 6px; }
+.nav-menu { display: flex; gap: 0; align-items: center; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); border-radius: 50px; padding: 6px; border: 1px solid rgba(255, 255, 255, 0.25); list-style: none; margin: 0; padding-left: 6px; padding-right: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
 .nav-menu li { margin: 0; list-style: none; }
-.nav-menu a { color: #64748b; padding: 8px 16px; border-radius: 50px; transition: all 0.3s ease; font-weight: 500; }
-.nav-menu a:hover { color: #0f172a; background: rgba(255, 255, 255, 0.3); }
+.nav-menu a { color: #64748b; padding: 8px 16px; border-radius: 50px; transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease; font-weight: 600; }
+.nav-menu a:hover { color: #0f172a; background: rgba(255, 255, 255, 0.3); transform: translateY(-1px); }
+.nav-menu a[aria-current="page"],
+.nav-menu a.active { color: #0f172a; background: rgba(255,255,255,0.55); }
 
 /* Dark mode header text colors */
 .theme-dark .brand,
 .theme-dark .brand-delta { color: #a0a0a0; }
-.theme-dark .nav-menu a { color: #a0a0a0; }
+.theme-dark .nav-menu a { color: #cbd5e1; }
 .theme-dark .nav-menu a:hover { color: #ffffff; background: rgba(139,201,255,0.18); }
+.theme-dark .nav-menu a[aria-current="page"],
+.theme-dark .nav-menu a.active { color: #111827; background: rgba(255,255,255,0.85); }
 
 @media (max-width: 720px) {
   .nav-toggle { display: inline-block; }
-  .nav-menu { position: absolute; top: 64px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 12px; display: none; flex-direction: column; gap: 4px; min-width: 180px; }
+  .nav-menu { position: absolute; top: 64px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 20px; padding: 12px; display: none; flex-direction: column; gap: 4px; min-width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
   .nav-menu.is-open { display: flex; }
 }
 

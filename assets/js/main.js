@@ -7,6 +7,14 @@
     var isOpen = menu.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
+  // Close mobile menu on link click (accessibility + UX)
+  menu.addEventListener('click', function (e) {
+    var target = e.target;
+    if (target && target.tagName === 'A' && menu.classList.contains('is-open')) {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 })();
 
 // Footer year without inline script
@@ -22,34 +30,8 @@
   }
 })();
 
-// Theme toggle (dark/light with persistence)
-(function () {
-  var THEME_KEY = 'site-theme';
-  var root = document.body;
-  var button = document.getElementById('theme-toggle');
-  if (!root || !button) return;
-
-  function applyTheme(theme) {
-    root.classList.remove('theme-light', 'theme-dark', 'theme-delta');
-    root.classList.add(theme);
-    button.innerHTML = theme === 'theme-dark' ? '<span aria-hidden="true">☀️</span>' : '<span aria-hidden="true">🌙</span>';
-    button.setAttribute('aria-label', 'Switch to ' + (theme === 'theme-dark' ? 'light' : 'dark') + ' theme');
-  }
-
-  var stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'theme-light' || stored === 'theme-dark') {
-    applyTheme(stored);
-  } else {
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(prefersDark ? 'theme-dark' : 'theme-light');
-  }
-
-  button.addEventListener('click', function () {
-    var next = root.classList.contains('theme-dark') ? 'theme-light' : 'theme-dark';
-    applyTheme(next);
-    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
-  });
-})();
+// Theme forced to light: clean removal of toggle logic
+// No runtime theme switching; site uses light theme styles by default.
 
 // (gallery scripts removed)
 
