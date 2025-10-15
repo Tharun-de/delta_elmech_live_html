@@ -127,31 +127,61 @@
 })();
 
 
-// Work slider: arrows + drag scroll + snap
+// Work slider: modern snap-center with drag/wheel and simple arrows
 (function () {
   var track = document.getElementById('work-track');
   if (!track) return;
+
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.work-slide'));
   var prev = document.querySelector('.work-arrow.prev');
   var next = document.querySelector('.work-arrow.next');
 
-  function slideBy(dir) {
-    var w = track.clientWidth * 0.9;
-    // pause auto so the RAF loop doesn't fight smooth scroll
-    if (typeof stopAuto === 'function') stopAuto();
-    track.scrollBy({ left: dir * w, behavior: 'smooth' });
-    // after animation, normalize position into [0, baseWidth) and resume
-    setTimeout(function () {
-      try {
-        var bw = track.scrollWidth / 2;
-        if (bw > 0) track.scrollLeft = track.scrollLeft % bw;
-      } catch (e) {}
-      if (typeof startAuto === 'function') startAuto();
-    }, 550);
+  function centerOn(index) {
+    if (!slides[index]) return;
+    var left = slides[index].offsetLeft;
+    track.scrollTo({ left: left, behavior: 'smooth' });
   }
 
-  if (prev) prev.addEventListener('click', function () { slideBy(-1); });
-  if (next) next.addEventListener('click', function () { slideBy(1); });
+  function findCenterIndex() {
+    var mid = track.scrollLeft + track.clientWidth / 2;
+    var idx = 0;
+    var minDist = Infinity;
+    slides.forEach(function (slide, i) {
+      var slideMid = slide.offsetLeft + slide.clientWidth / 2;
+      var dist = Math.abs(slideMid - mid);
+      if (dist < minDist) { minDist = dist; idx = i; }
+    });
+    return idx;
+  }
 
+  function updateActive() {
+    var idx = findCenterIndex();
+    slides.forEach(function (s, i) { s.classList.toggle('is-center', i === idx); });
+  }
+
+  // Update active slide on scroll (throttled by rAF)
+  var ticking = false;
+  track.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { updateActive(); ticking = false; });
+  });
+
+  // Init
+  updateActive();
+
+  if (prev) prev.addEventListener('click', function () { centerOn(Math.max(0, findCenterIndex() - 1)); });
+  if (next) next.addEventListener('click', function () { centerOn(Math.min(slides.length - 1, findCenterIndex() + 1)); });
+
+  // Wheel: vertical wheel scrolls horizontally for this track
+  track.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      track.scrollBy({ left: e.deltaY, behavior: 'auto' });
+    }
+  }, { passive: false });
+
+  // Drag to scroll
   var isDown = false; var startX = 0; var startLeft = 0;
   function onDown(e) {
     isDown = true;
@@ -162,11 +192,14 @@
   function onMove(e) {
     if (!isDown) return;
     var x = (e.touches ? e.touches[0].clientX : e.clientX);
-    var dx = x - startX;
-    track.scrollLeft = startLeft - dx;
+    track.scrollLeft = startLeft - (x - startX);
   }
-  function onUp() { isDown = false; track.classList.remove('is-dragging'); }
-
+  function onUp() {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+    centerOn(findCenterIndex());
+  }
   track.addEventListener('mousedown', onDown);
   track.addEventListener('touchstart', onDown, { passive: true });
   window.addEventListener('mousemove', onMove);
@@ -174,72 +207,7 @@
   window.addEventListener('mouseup', onUp);
   window.addEventListener('touchend', onUp);
 
-  // Continuous auto-scroll (seamless loop)
-  var duplicated = track.getAttribute('data-duplicated');
-  if (!duplicated) {
-    var originals = Array.prototype.slice.call(track.children);
-    originals.forEach(function (node) { track.appendChild(node.cloneNode(true)); });
-    track.setAttribute('data-duplicated', 'true');
-  }
-  var baseWidth = track.scrollWidth / 2;
-
-  var raf = null; 
-  var sliderRoot = document.querySelector('.work-slider');
-  var speedAttr = sliderRoot ? parseFloat(sliderRoot.getAttribute('data-speed') || '60') : 60; // pixels/sec
-  var speedPxPerFrame = Math.max(10, Math.min(160, speedAttr)) / 60;
-  function tick() {
-    track.scrollLeft += speedPxPerFrame;
-    if (track.scrollLeft >= baseWidth) {
-      track.scrollLeft -= baseWidth;
-    }
-    raf = requestAnimationFrame(tick);
-  }
-  function startAuto() { 
-    if (!raf) raf = requestAnimationFrame(tick);
-    track.classList.add('is-autoplaying');
-  }
-  function stopAuto() { 
-    if (raf) { cancelAnimationFrame(raf); raf = null; }
-    track.classList.remove('is-autoplaying');
-  }
-
-  // Start by default
-  startAuto();
-
-  // Pause only during drag interactions (not on hover)
-  track.addEventListener('mousedown', stopAuto);
-  track.addEventListener('touchstart', stopAuto, { passive: true });
-  window.addEventListener('mouseup', startAuto);
-  window.addEventListener('touchend', startAuto);
-
-  // Pause when tab not visible
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) stopAuto(); else startAuto();
-  });
-
-  // Recalculate baseWidth on resize
-  window.addEventListener('resize', function () {
-    baseWidth = track.scrollWidth / 2;
-    // ensure position stays within range after content size change
-    if (track.scrollLeft >= baseWidth) {
-      track.scrollLeft = track.scrollLeft % baseWidth;
-    }
-  });
-
-  // Keyboard navigation when slider is hovered or focused
-  var isHover = false;
-  if (sliderRoot) {
-    sliderRoot.addEventListener('mouseenter', function () { isHover = true; });
-    sliderRoot.addEventListener('mouseleave', function () { isHover = false; });
-  }
-  window.addEventListener('keydown', function (e) {
-    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-    var active = document.activeElement;
-    var inContext = isHover || (sliderRoot && sliderRoot.contains(active));
-    if (!inContext) return;
-    e.preventDefault();
-    slideBy(e.key === 'ArrowLeft' ? -1 : 1);
-  });
+  window.addEventListener('resize', updateActive);
 })();
 
 // Choose Delta rotator (auto-rotate with pause offscreen)
