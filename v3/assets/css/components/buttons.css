@@ -1,0 +1,11 @@
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 50px; border: 1px solid transparent; transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease; font-weight: 600; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--primary); color: #ffffff; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 20px rgba(51,82,172,0.35); padding: 14px 24px; }
+.btn-primary:hover { background: var(--primary-600); box-shadow: 0 12px 28px rgba(51,82,172,0.45), 0 0 0 2px rgba(255,239,64,0.25) inset; }
+.btn-ghost { background: rgba(255, 255, 255, 0.95); color: #475569; border: none; font-weight: 600; }
+.btn-ghost:hover { background: rgba(255, 255, 255, 1); color: #0f172a; }
+.btn-sm { padding: 8px 12px; font-size: 14px; }
+
+
+
