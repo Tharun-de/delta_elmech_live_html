@@ -8,7 +8,7 @@
 /* Image-backed card variant for Services */
 .card-cover { position: relative; padding: 0; background-size: cover; background-position: center; color: #ffffff; border: 1px solid rgba(255,255,255,0.12); overflow: hidden; }
 .card-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.22) 48%, rgba(0,0,0,0.45) 100%); border-radius: 12px; z-index: 1; }
-.card-cover::before { content: ""; position: absolute; inset: -24px; border-radius: 16px; background: radial-gradient(160px 120px at 18% 22%, rgba(149,73,218,0.35), transparent 62%), radial-gradient(180px 120px at 82% 78%, rgba(173,97,202,0.30), transparent 60%), radial-gradient(120px 90px at 50% 0%, rgba(146,101,112,0.24), transparent 62%); filter: blur(18px) saturate(1.05); opacity: 0.65; z-index: 0; pointer-events: none; animation: ledGlow 10s ease-in-out infinite alternate; }
+.card-cover::before { content: none; }
 .card-cover .card-content { position: relative; z-index: 2; padding: 18px; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
 .card-cover h3 { margin: 0; color: #ffffff; }
 .card-cover p { margin: 0; color: rgba(255,255,255,0.9); }
